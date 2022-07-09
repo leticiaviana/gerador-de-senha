@@ -21,7 +21,8 @@ function generatePassword(){
         pass += charset.charAt(Math.floor(Math.random() * n))
         
     }
-
+    document.querySelector('.tooltip').style.display = 'block'
+    document.querySelector('.copied').style.display = 'none'
     containerPassword.classList.remove('hide')
     password.innerHTML = pass;
     novaSenha = pass;
@@ -30,5 +31,8 @@ function generatePassword(){
 
 function copyPassword(){
     navigator.clipboard.writeText(novaSenha);
-    alert("Senha copiada com sucesso!")
+    document.querySelector('.tooltip').style.display = 'none'
+    document.querySelector('.copied').style.display = 'block'
+
+
 }
